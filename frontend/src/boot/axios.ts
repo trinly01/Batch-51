@@ -15,6 +15,7 @@ declare module 'vue' {
 // "export default () => {}" function below (which runs individually
 // for each client)
 const api = axios.create({ baseURL: `${process.env.STRAPI_URL}/api` });
+const graphqlApi = axios.create({ baseURL: `${process.env.STRAPI_URL}/graphql` });
 
 export default defineBoot(({ app }) => {
   // for use inside Vue files (Options API) through this.$axios and this.$api
@@ -26,6 +27,8 @@ export default defineBoot(({ app }) => {
   app.config.globalProperties.$api = api;
   // ^ ^ ^ this will allow you to use this.$api (for Vue Options API form)
   //       so you can easily perform requests against your app's API
+
+  app.config.globalProperties.$graphqlApi = graphqlApi;
 });
 
-export { api };
+export { api, graphqlApi };
