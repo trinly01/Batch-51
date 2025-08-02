@@ -1,6 +1,6 @@
 <template>
   <q-page class="col">
-    <h1>Inventory</h1>
+    <h1>Inventory Pogi</h1>
     <div class="row q-gutter-md q-pa-md">
       <q-card class="my-card " flat bordered v-for="item in items" :key="item.id">
         <!-- <q-img src="https://cdn.quasar.dev/img/chicken-salad.jpg" /> -->
